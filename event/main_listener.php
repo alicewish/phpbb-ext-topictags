@@ -183,8 +183,7 @@ class main_listener implements EventSubscriberInterface
 				$tags = $this->get_tags_from_post_request();
 				$all_tags = $this->tags_manager->split_valid_tags($tags);
 				$valid_tags = $all_tags['valid'];
-				if (count($valid_tags)>0)
-					$this->tags_manager->assign_tags_to_topic($data['topic_id'], $valid_tags);
+				$this->tags_manager->assign_tags_to_topic($data['topic_id'], $valid_tags);
 			}
 		}
 	}
